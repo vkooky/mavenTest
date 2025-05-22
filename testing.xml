@@ -1,23 +1,21 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Suite" parallel="none">
-    <test name="Test">
-        <!--        <groups>-->
-        <!--            <run>-->
-        <!--                <include name="group1"/>-->
-        <!--            </run>-->
-        <!--        </groups>-->
-
+    <test name="注册模块">
         <classes>
-            <class name="TestTest3"/>
+            <class name="com.api.register.TestRegister"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="登录模块">
+        <classes>
+            <class name="com.api.login.TestLogin2"/>
+            <parameter name="username" value="admin"/>
+            <parameter name="password" value="123"/>
+<!--            <class name="com.api.login.TestLogin"/>-->
         </classes>
 
     </test> <!-- Test -->
 
-    <test name="Test2">
-        <classes>
-            <class name="TestTest4"/>
-        </classes>
-    </test> <!-- Test -->
+
 
 </suite> <!-- Suite -->
