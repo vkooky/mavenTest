@@ -11,44 +11,47 @@ public class TestLogin2 {
 
     @Test(dataProvider = "methoddata")
 //    @Parameters(value={"username","password"})
-    public void testlogin2(String username,String password){
+    public void testlogin2(String username, String password) {
 
 //        System.out.println("测试登录用例2");
-        System.out.println("用户名："+username+"，密码："+password);
+        System.out.println("用户名：" + username + "，密码：" + password);
 
     }
 
 
     @Test(dataProvider = "methoddata")
-    public void testlogin3(String username,String password){
-        System.out.println("用户名："+username+"，密码："+password);
+    public void testlogin3(String username, String password) {
+        System.out.println("用户名：" + username + "，密码：" + password);
     }
 
 
     @DataProvider
-    public Object[][] getData(){
-        Object[][] data={
-                {"张三","123"},
-                {"李四","123"},
-                {"王五","123"}
+    public Object[][] getData() {
+        Object[][] data = {
+                {"张三", "123"},
+                {"李四", "123"},
+                {"王五", "123"}
         };
         return data;
     }
-    @DataProvider(name="methoddata")
-    public Object[][] methodDataTest(Method method){
-        Object[][] result=null;
-        if(method.getName().equals("testlogin2")){
-            result=new Object[][]{
-                    {"张三","123"},
-                    {"李四","123"}
+
+    @DataProvider(name = "methoddata")
+    public Object[][] methodDataTest(Method method) {
+        Object[][] result = null;
+        if (method.getName().equals("testlogin2")) {
+            result = new Object[][]{
+                    {"张三", "123"},
+                    {"李四", "123"}
             };
         } else if (method.getName().equals("testlogin3")) {
-            result=new Object[][]{
+            result = new Object[][]{
 
-                    {"王五","123"}
+                    {"王五", "123"}
             };
 
         }
         return result;
     }
+
 }
+
